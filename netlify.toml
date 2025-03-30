@@ -1,12 +1,14 @@
 [build]
-  command = "npm install && npm run build"
+  command = "MISE_DISABLE=1 npm install && npm run build"
   publish = "out"
 
 [build.environment]
   NODE_VERSION = "18"
   SKIP_GO_INSTALL = "true"
+  MISE_DISABLE = "1"
+  NODE_ENV = "production"
 
-# IMPORTANTE: Rimuovi il plugin Next.js poiché stai utilizzando l'export statico
+# Rimuovo il plugin Next.js poiché stai utilizzando l'export statico
 # [[plugins]]
 #  package = "@netlify/plugin-nextjs"
 
