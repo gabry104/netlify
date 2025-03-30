@@ -1,6 +1,6 @@
 [build]
   command = "MISE_DISABLE=1 npm install && npm run build"
-  publish = "out"
+  publish = ".next"
 
 [build.environment]
   NODE_VERSION = "18"
@@ -8,9 +8,8 @@
   MISE_DISABLE = "1"
   NODE_ENV = "production"
 
-# Rimuovo il plugin Next.js poiché stai utilizzando l'export statico
-# [[plugins]]
-#  package = "@netlify/plugin-nextjs"
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 [images]
   remote_images = [
