@@ -1,14 +1,14 @@
-
 [build]
   command = "npm install && npm run build"
   publish = "out"
 
 [build.environment]
-  NODE_VERSION = "18"  # o la versione che stai usando
-  SKIP_GO_INSTALL = "true"  # Questo dovrebbe evitare l'installazione di Go
+  NODE_VERSION = "18"
+  SKIP_GO_INSTALL = "true"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+# IMPORTANTE: Rimuovi il plugin Next.js poiché stai utilizzando l'export statico
+# [[plugins]]
+#  package = "@netlify/plugin-nextjs"
 
 [images]
   remote_images = [
@@ -28,9 +28,3 @@
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Content-Type-Options = "nosniff"
-
-# ATTENZIONE: Ho rimosso il rewrite a livello root perché Netlify avverte 
-# che potrebbe interferire con il plugin Next.js
-
-# Uso di Next.js Runtime invece del metodo statico
-# Non modificare il next.config.js per output: 'export' quando usi questo approccio
