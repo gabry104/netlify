@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  distDir: 'out',
+  // Rimuovo output: 'export' e distDir: 'out' per utilizzare l'approccio dinamico
   /* config options here */
   images: {
-    unoptimized: true,
+    // Rimuovo unoptimized: true perché con l'approccio dinamico non è necessario
     domains: [
       "source.unsplash.com",
       "images.unsplash.com",
